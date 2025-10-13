@@ -5,6 +5,13 @@ struct OnboardingGetStartedView: View {
     var body: some View {
         ZStack {
             Image("Onboarding-GetStarted-Image")
+                .resizable()
+                .ignoresSafeArea()
+            OnboardingButton(
+                title: "Get Started",
+                position: .bottomCenter) {
+                    onComplete()
+                }
         }
     }
 }

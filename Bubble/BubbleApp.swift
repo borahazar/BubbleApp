@@ -6,7 +6,7 @@ struct BubbleApp: App {
     var body: some Scene {
         WindowGroup {
             if viewModel.showingOnboarding {
-                Text("Hello")
+                OnboardingContainerView(path: $viewModel.path, onComplete: viewModel.completeOnboarding)
             } else {
                 Text("Main App")
             }

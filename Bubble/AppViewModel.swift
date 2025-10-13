@@ -3,7 +3,7 @@ import Observation
 
 @Observable
 final class AppViewModel {
-    var showingOnboarding: Bool = false
+    var showingOnboarding: Bool = true
     var path: NavigationPath = NavigationPath()
     
     func completeOnboarding() {
