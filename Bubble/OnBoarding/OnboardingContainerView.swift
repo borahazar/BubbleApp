@@ -10,8 +10,6 @@ struct OnboardingContainerView: View {
             
             .navigationDestination(for: OnboardingStep.self) { step in
                 switch step {
-                case .welcome:
-                    OnboardingWelcomeView(path: $path)
                 case .info:
                     OnboardingInfoView(path: $path)
                 case .getStarted:
