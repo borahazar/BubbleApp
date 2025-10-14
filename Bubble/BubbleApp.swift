@@ -8,7 +8,7 @@ struct BubbleApp: App {
             if viewModel.showingOnboarding {
                 OnboardingContainerView(path: $viewModel.path, onComplete: viewModel.completeOnboarding)
             } else {
-                Text("Main App")
+                MainView()
             }
         }
     }
