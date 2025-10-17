@@ -10,7 +10,7 @@ struct Bubble {
         self.position = position
         self.radius = radius
         
-        self.velocity = CGVector(dx: cos(radian) * speed, dy: sin(radian) * speed)
+        self.velocity = CGVector(dx: cos(radian) * speed, dy: -sin(radian) * speed)
     }
     
     mutating func move() {
