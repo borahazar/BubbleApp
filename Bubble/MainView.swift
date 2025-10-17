@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var isSettingsOpen = false
+    @State private var isDragging = false
     @State private var dragOffset: CGFloat = 0
     var body: some View {
         GeometryReader { geometry in
@@ -19,7 +20,7 @@ struct MainView: View {
                     .gesture(
                         DragGesture(minimumDistance: 20)
                             .onChanged { value in
-                                print("Dragging: \(value.translation.width)")
+                                isDragging = true
                                 dragOffset = value.translation.width
                                 
                             }
@@ -30,6 +31,7 @@ struct MainView: View {
                                     isSettingsOpen = false
                                 }
                                 dragOffset = 0
+                                isDragging = false
                             }
                     )
                     
@@ -52,7 +54,7 @@ struct MainView: View {
                     .frame(width: geometry.size.width * 0.7)
                     .offset(x: min((isSettingsOpen ? 0 : -geometry.size.width * 0.7 + dragOffset), 0))
                     .animation(.easeInOut(duration: 0.4), value: isSettingsOpen)
-                    .animation(.easeInOut(duration: 0.4), value: dragOffset)
+                    .animation(.easeInOut(duration: isDragging ? 0 : 0.4), value: dragOffset)
             }
         }
     }
