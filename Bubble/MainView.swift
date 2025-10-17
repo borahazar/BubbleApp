@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var bubbleVM = BubbleViewModel()
     @State private var isSettingsOpen = false
     @State private var isDragging = false
     @State private var dragOffset: CGFloat = 0
@@ -50,7 +51,7 @@ struct MainView: View {
                     Spacer()
                 }
                 
-                SettingsView()
+                SettingsView(viewModel: bubbleVM)
                     .frame(width: geometry.size.width * 0.7)
                     .offset(x: min((isSettingsOpen ? 0 : -geometry.size.width * 0.7 + dragOffset), 0))
                     .animation(.easeInOut(duration: 0.4), value: isSettingsOpen)
