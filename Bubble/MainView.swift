@@ -8,7 +8,7 @@ struct MainView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading){
-                Color.blue.opacity(0.3)
+                Color.blue.opacity(0.3).ignoresSafeArea()
                     .ignoresSafeArea()
                     .onTapGesture {
                         if isSettingsOpen {
