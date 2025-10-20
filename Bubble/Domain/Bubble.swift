@@ -1,5 +1,26 @@
 import CoreGraphics
 import Foundation
+import SwiftUI
+
+extension Color {
+    static var random: Color {
+        Color(
+            red: Double.random(in: 0...1),
+            green: Double.random(in: 0...1),
+            blue: Double.random(in: 0...1)
+        )
+    }
+}
+
+let rainbowColorArray: [Color] = [
+    .red,
+    .orange,
+    .yellow,
+    .green,
+    .blue,
+    Color(hue: 0.69, saturation: 1, brightness: 0.9),
+    .purple
+]
 
 struct Bubble {
     var position: CGPoint

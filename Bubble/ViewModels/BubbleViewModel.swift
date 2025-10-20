@@ -7,7 +7,7 @@ final class BubbleViewModel {
     var bubbles: [Bubble] = []
     var isRunning: Bool = false
     
-    var bubbleCount: Int = 0
+    var bubbleCount: CGFloat = 0
     var bubbleRadius: CGFloat = 0
     var bubbleSpeed: CGFloat = 3
     var bubbleColors: [Color] = [.red, .blue, .green]
